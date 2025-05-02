@@ -355,7 +355,7 @@
             cursor: pointer;
             font-weight: 500;
             transition: var(--transition);
-            width: 170px;
+            width: 150px;
             margin: 10px auto 0;
         }
 
@@ -608,7 +608,7 @@
         // Menu Mobile Toggle
         const menuToggle = document.getElementById('menuToggle');
         const sidebar = document.getElementById('sidebar');
-
+        
         menuToggle.addEventListener('click', function() {
             sidebar.classList.toggle('active');
             this.querySelector('i').classList.toggle('fa-bars');
@@ -633,10 +633,10 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-
+                
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-
+                
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
@@ -649,7 +649,7 @@
         // Animação ao rolar
         document.addEventListener('DOMContentLoaded', function() {
             const animateElements = document.querySelectorAll('.animate');
-
+            
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
