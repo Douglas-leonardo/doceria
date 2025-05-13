@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Doceria Delícia - Confeitaria Artesanal</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -23,6 +23,7 @@
             line-height: 1.6;
             color: #333;
             overflow-x: hidden;
+            -webkit-text-size-adjust: 100%;
         }
 
         h1, h2, h3, h4 {
@@ -47,6 +48,7 @@
 
         button, input, textarea {
             font-family: inherit;
+            font-size: 16px; /* Tamanho mínimo para mobile */
         }
 
         /* Variáveis CSS */
@@ -87,6 +89,7 @@
             z-index: 1000;
             transition: var(--transition);
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch; /* Suave rolagem no iOS */
         }
 
         #sidebar.active {
@@ -101,18 +104,18 @@
         }
 
         .logo-doceria {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--light);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             box-shadow: var(--shadow);
         }
 
         #sidebar h1 {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
             text-align: center;
             color: var(--light);
         }
@@ -122,16 +125,23 @@
         }
 
         #sidebar nav li {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             position: relative;
         }
 
         #sidebar nav a {
             display: block;
-            padding: 10px 15px;
+            padding: 10px 12px;
             border-radius: var(--border-radius);
             transition: var(--transition);
             font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        #sidebar nav a i {
+            margin-right: 8px;
+            width: 20px;
+            text-align: center;
         }
 
         #sidebar nav a:hover {
@@ -141,15 +151,15 @@
 
         .menu-toggle {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            top: 15px;
+            left: 15px;
             background-color: var(--primary);
             color: white;
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             cursor: pointer;
             z-index: 1100;
             display: flex;
@@ -168,37 +178,38 @@
             flex: 1;
             margin-left: 0;
             transition: var(--transition);
-            padding-top: 80px;
+            padding-top: 70px;
+            width: 100%;
         }
 
         /* Seções */
         section {
-            padding: 60px 20px;
+            padding: 40px 15px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         section h1, section h2 {
             color: var(--primary-dark);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             position: relative;
             display: inline-block;
         }
 
         section h1 {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
         }
 
         section h2 {
-            font-size: 2rem;
+            font-size: 1.6rem;
         }
 
         section h1::after, section h2::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -8px;
             left: 0;
-            width: 60px;
+            width: 50px;
             height: 3px;
             background-color: var(--primary);
         }
@@ -209,7 +220,7 @@
         }
 
         .banner {
-            height: 300px;
+            height: 250px;
             background-image: url('https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80');
             background-position: center;
             background-size: cover;
@@ -227,23 +238,24 @@
         }
 
         .sessao-bemvindo-content {
-            padding: 40px 20px;
+            padding: 30px 15px;
         }
 
         .sessao-minibanner {
             width: 100%;
-            height: 250px;
+            height: 200px;
             background-image: url('https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1400&q=80');
             background-position: center;
             background-size: cover;
             border-radius: var(--border-radius-lg);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             box-shadow: var(--shadow);
         }
 
         .sessao-descricao p {
-            margin-bottom: 20px;
-            line-height: 1.8;
+            margin-bottom: 15px;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         /* Botões */
@@ -259,6 +271,7 @@
             cursor: pointer;
             text-align: center;
             box-shadow: var(--shadow);
+            font-size: 0.95rem;
         }
 
         .btn:hover {
@@ -268,8 +281,9 @@
         }
 
         .sessao-bemvindo-btn {
-            margin: 30px auto 0;
+            margin: 25px auto 0;
             width: 150px;
+            display: block;
         }
 
         /* Sessão Sobre */
@@ -280,13 +294,13 @@
         /* Galerias */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 25px;
         }
 
         .banner-galeria {
-            height: 200px;
+            height: 150px;
             border-radius: var(--border-radius);
             background-position: center;
             background-size: cover;
@@ -318,12 +332,12 @@
 
         /* Formulário de Contato */
         #form-contato {
-            max-width: 600px;
+            max-width: 100%;
             margin: 0 auto;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         #form-contato input,
@@ -344,7 +358,7 @@
         }
 
         #form-contato textarea {
-            height: 150px;
+            height: 120px;
             resize: vertical;
         }
 
@@ -355,8 +369,10 @@
             cursor: pointer;
             font-weight: 500;
             transition: var(--transition);
-            width: 150px;
+            width: 100%;
+            max-width: 200px;
             margin: 10px auto 0;
+            display: block;
         }
 
         #form-contato input[type="submit"]:hover {
@@ -368,12 +384,30 @@
             background-color: var(--primary);
             color: var(--light);
             text-align: center;
-            padding: 30px 20px;
-            margin-top: 60px;
+            padding: 25px 15px;
+            margin-top: 40px;
         }
 
         footer p {
             font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            margin-bottom: 15px;
+        }
+
+        .social-links a {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin: 0 10px;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--secondary);
+            transform: translateY(-3px);
         }
 
         /* Animações */
@@ -384,7 +418,7 @@
 
         .animate {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             transition: all 0.8s ease;
         }
 
@@ -393,8 +427,116 @@
             transform: translateY(0);
         }
 
-        /* Responsividade */
-        @media (min-width: 768px) {
+        /* Melhorias para Mobile */
+        @media (max-width: 767px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            #sidebar {
+                left: -280px;
+                width: 280px;
+            }
+            
+            #sidebar.active {
+                left: 0;
+            }
+            
+            .content {
+                padding-top: 70px;
+            }
+            
+            .banner {
+                height: 220px;
+            }
+            
+            section {
+                padding: 35px 15px;
+            }
+            
+            section h1 {
+                font-size: 1.7rem;
+            }
+            
+            section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+                gap: 12px;
+            }
+            
+            .banner-galeria {
+                height: 140px;
+            }
+        }
+
+        /* Responsividade para Tablets */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container {
+                flex-direction: row;
+            }
+
+            #sidebar {
+                position: fixed;
+                left: 0;
+                width: 250px;
+                padding-top: 30px;
+            }
+
+            .content {
+                margin-left: 250px;
+                padding-top: 0;
+            }
+
+            .menu-toggle {
+                display: none;
+            }
+
+            .sessao-bemvindo-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                align-items: center;
+                padding: 50px 30px;
+            }
+
+            .sessao-minibanner {
+                height: 300px;
+                margin-bottom: 0;
+            }
+
+            .banner {
+                height: 400px;
+            }
+
+            section {
+                padding: 60px 30px;
+            }
+
+            #sessao-sobre .sessao-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+                align-items: center;
+            }
+
+            #sessao-sobre .sessao-minibanner {
+                order: 2;
+            }
+
+            #sessao-sobre .sessao-descricao {
+                order: 1;
+            }
+            
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        /* Responsividade para Desktop */
+        @media (min-width: 992px) {
             .container {
                 flex-direction: row;
             }
@@ -450,19 +592,21 @@
             #sessao-sobre .sessao-descricao {
                 order: 1;
             }
-        }
-
-        @media (min-width: 992px) {
+            
             section h1 {
-                font-size: 3rem;
-            }
-
-            section h2 {
                 font-size: 2.5rem;
             }
-
+            
+            section h2 {
+                font-size: 2rem;
+            }
+            
             .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .banner-galeria {
+                height: 200px;
             }
         }
     </style>
@@ -664,6 +808,11 @@
             animateElements.forEach(element => {
                 observer.observe(element);
             });
+        });
+        
+        // Prevenir zoom em inputs no iOS
+        document.addEventListener('gesturestart', function(e) {
+            e.preventDefault();
         });
     </script>
 </body>
